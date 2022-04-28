@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\kriostat.pl",
+    "\\kriostat.pl\\kriostat.pl",
+    "\\kriostat.pl\\kriostat.pl\\Pages"
   ],
-  "SelectedNode": "\\kriostat.pl.sln",
+  "SelectedNode": "\\kriostat.pl\\kriostat.pl\\Pages\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
