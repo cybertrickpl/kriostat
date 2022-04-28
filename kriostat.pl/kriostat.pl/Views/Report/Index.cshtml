@@ -1,0 +1,21 @@
+﻿@model kriostat.pl.Models.Report.IndexViewModel
+@{
+    ViewData["Title"] = "Raport";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Raport @Model.SqrtYear</p>
+
+<span> @Model.FirstName</span>
+@if (Model.IsJacek)
+{
+    <h1> Cześć Jacek! </h1>
+}
+else
+{
+<h1 style="color:red"> Gdzie jest Jacek? </h1>    
+}
+
+
+<span> @System.DateTime.Now.AddHours(-4).ToString("yyyy-MM-dd HH:mm:ss")</span>
+
