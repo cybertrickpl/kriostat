@@ -4,15 +4,15 @@ namespace kriostat.pl.Models.Report
 {
     public class IndexViewModel
     {
-        [Required] 
-        public string A { get; set; }
-        [Required]
-        public string B { get; set; }
-        [Required]
-        public string C { get; set; }
+
+        public double? A { get; set; }
+
+        public double? B { get; set; }
+
+        public double? C { get; set; }
 
         public int Year { get; set; }
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
         public bool IsJacek
         {
@@ -33,6 +33,19 @@ namespace kriostat.pl.Models.Report
             {
                 return Math.Sqrt(Year);
             }
+        }
+
+        public string ZerosMessage()
+        {
+            
+                if (!A.HasValue)
+                {
+                    return "Uzupełnij A";
+                }
+
+                return "";
+
+            
         }
     }
 }

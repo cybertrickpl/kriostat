@@ -9,11 +9,11 @@
 <span> @Model.FirstName</span>
 @if (Model.IsJacek)
 {
-    <h1 style="color:blue" > Cześć Jacek! </h1>
+    <h1 style="color:blue"> Cześć Jacek! </h1>
 }
 else
 {
-<h1 style="color:red"> Gdzie jest Jacek? </h1>    
+    <h1 style="color:red"> Gdzie jest Jacek? </h1>
 }
 
 
@@ -21,20 +21,21 @@ else
 
 
 
-<form method="post">
-<br /> <label for="name">Enter a:</label>
-<input type="text" required asp-for="A">
-       
+<form asp-controller="Report" asp-action="Index" method="post">
+    <br /> 
+    <label for="A">Enter a:</label>
+    <input type="text" name="A" id="A" />
 
- <br /> <label for="name">Enter b:</label>
 
-<input type="text" required asp-for="B">
-       
-   <br />
+    <br /> 
+    <label for="B">Enter b:</label>
+    <input type="text" name="B" id="B" />
 
-<label for="name">Enter c:</label>
-
-<input type="text" required asp-for="C"">
+    <br />
+    <label for="C">Enter c:</label>
+    <input type="text" name="C" id="C" />
 
     <button type="submit">Przelicz</button>
+
+    <h2>Miejsca zerowe: @Model.ZerosMessage()</h2>
 </form>

@@ -28,7 +28,10 @@ namespace kriostat.pl.Controllers
         [HttpPost]
         public IActionResult Index(IndexViewModel model)
         {
-           
+            if (ModelState.IsValid)
+            {
+            }
+
             return View(model);
         }
     }
