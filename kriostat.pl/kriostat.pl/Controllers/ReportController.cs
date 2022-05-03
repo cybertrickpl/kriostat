@@ -24,5 +24,12 @@ namespace kriostat.pl.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult Index(IndexViewModel model)
+        {
+           
+            return View(model);
+        }
     }
 }

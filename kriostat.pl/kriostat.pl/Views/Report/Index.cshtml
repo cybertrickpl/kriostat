@@ -9,7 +9,7 @@
 <span> @Model.FirstName</span>
 @if (Model.IsJacek)
 {
-    <h1> Cześć Jacek! </h1>
+    <h1 style="color:blue" > Cześć Jacek! </h1>
 }
 else
 {
@@ -19,3 +19,22 @@ else
 
 <span> @System.DateTime.Now.AddHours(-4).ToString("yyyy-MM-dd HH:mm:ss")</span>
 
+
+
+<form method="post">
+<br /> <label for="name">Enter a:</label>
+<input type="text" required asp-for="A">
+       
+
+ <br /> <label for="name">Enter b:</label>
+
+<input type="text" required asp-for="B">
+       
+   <br />
+
+<label for="name">Enter c:</label>
+
+<input type="text" required asp-for="C"">
+
+    <button type="submit">Przelicz</button>
+</form>

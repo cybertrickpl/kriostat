@@ -1,7 +1,16 @@
-﻿namespace kriostat.pl.Models.Report
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace kriostat.pl.Models.Report
 {
     public class IndexViewModel
     {
+        [Required] 
+        public string A { get; set; }
+        [Required]
+        public string B { get; set; }
+        [Required]
+        public string C { get; set; }
+
         public int Year { get; set; }
         public string FirstName { get; set; }
 
@@ -13,7 +22,7 @@
                 {
                     if (FirstName.ToUpper() == "JACEK") { return true; }
                 }
-                
+
                 return false;
             }
         }
