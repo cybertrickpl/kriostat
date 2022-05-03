@@ -1,4 +1,7 @@
-﻿@model kriostat.pl.Models.Report.IndexViewModel
+﻿@page
+@model kriostat.pl.Models.Report.IndexViewModel
+
+
 @{
     ViewData["Title"] = "Raport";
 }
@@ -24,7 +27,7 @@ else
 <form asp-controller="Report" asp-action="Index" method="post">
     <br /> 
     <label for="A">Enter a:</label>
-    <input type="text" name="A" id="A" />
+    <input type="text" asp-for="A" />
 
 
     <br /> 

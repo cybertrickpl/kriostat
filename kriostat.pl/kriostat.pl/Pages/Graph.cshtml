@@ -1,8 +1,24 @@
 ﻿@page
 @model GraphModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     ViewData["Title"] = "Graph";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy 22222222.</p>
+
+<form  method="post">
+    <br /> 
+    <label for="A">Enter a:</label>
+    <input type="text" asp-for="GraphModelViewModel.A" />
+        <label for="A">Enter b:</label>
+    <input type="text" asp-for="GraphModelViewModel.B" />
+        <label for="A">Enter c:</label>
+    <input type="text" asp-for="GraphModelViewModel.C" />
+
+        <button type="submit">Przelicz</button>
+
+    <h2>Miejsca zerowe: @Model?.GraphModelViewModel?.ZerosMessage()</h2>
+</form>

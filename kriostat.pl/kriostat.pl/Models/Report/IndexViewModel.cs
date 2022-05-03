@@ -5,7 +5,7 @@ namespace kriostat.pl.Models.Report
     public class IndexViewModel
     {
 
-        public double? A { get; set; }
+        public string? A { get; set; }
 
         public double? B { get; set; }
 
@@ -38,7 +38,7 @@ namespace kriostat.pl.Models.Report
         public string ZerosMessage()
         {
             
-                if (!A.HasValue)
+                if (string.IsNullOrEmpty(A))
                 {
                     return "Uzupełnij A";
                 }
