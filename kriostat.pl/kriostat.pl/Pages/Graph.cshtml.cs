@@ -64,7 +64,7 @@ namespace kriostat.pl.Pages
 
                 }
 
-                catch
+                catch   
                 {
                     return "bląd formatu";
                 }
