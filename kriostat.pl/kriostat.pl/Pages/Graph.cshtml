@@ -9,6 +9,18 @@
 
 <p>Use this page to detail your site's privacy policy 22222222.</p>
 
+
+<form method="post">
+    <label>WPROWADŹ PESEL:</label>
+    <input type="text" asp-for="GraphModelViewModel.PESEL" />
+    <button type="submit">Sprawdź poprawność: </button>
+</form>
+<br />
+
+<h2>@Model?.GraphModelViewModel?.CheckPESEL()</h2>
+
+<br />
+
 <form  method="post">
     <br /> 
     <label for="A">Enter a:</label>
@@ -21,4 +33,29 @@
         <button type="submit">Przelicz</button>
 
     <h2>Miejsca zerowe: @Model?.GraphModelViewModel?.ZerosMessage()</h2>
+
+
+
 </form>
+
+
+<table class = "d-lg-table">  
+    <thead> 
+        <tr> 
+            <td> x </td>
+            <td> y </td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.GraphModelViewModel != null)
+        {
+            foreach (var row in Model.GraphModelViewModel.GetData())
+            {
+                <tr>
+                    <td>@row.X</td>
+                    <td>@row.Y</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
