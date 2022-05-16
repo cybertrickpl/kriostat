@@ -4,6 +4,38 @@
     ViewData["Title"] = "Home page";
 }
 
+<table>
+    <thead> 
+        <tr> <td>Number</td>
+            <td>Name</td>
+            <td>Mass</td>
+            <td>Info</td>
+            <td>Category</td>
+       </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListofVehicles)
+        {
+            <tr> 
+                <td>@item.Number</td>
+                <td>@item.Name</td>
+                <td>@item.Mass</td>
+                <td>@item.Info()</td>
+                <td>@item.VehicleType</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr> <td>Number</td>
+            <td>Name</td>
+            <td>@Model.ListofVehicles.Sum(x => x.Mass)</td>
+            <td>Info</td>
+            <td>Category</td>
+       </tr>
+    </tfoot>
+</table>
+
 <div class="text-center">
     <h5>Hello!</h5>
     <h2>My kriostat</h2>
@@ -14,3 +46,5 @@
     <div style="width: 50px; height:100px; background-color:red"></div>
     <div style="width: 100px; height:200px; background-color:blueviolet"></div>
 </div>
+
+<h1> @Model?.Count</h1>
