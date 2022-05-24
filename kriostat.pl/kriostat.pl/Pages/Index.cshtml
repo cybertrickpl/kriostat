@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<table>
+@*<table>
     <thead> 
         <tr> <td>Number</td>
             <td>Name</td>
@@ -34,7 +34,37 @@
             <td>Category</td>
        </tr>
     </tfoot>
+</table>*@
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Author</td>
+            <td>ISBN</td>
+        </tr>
+    </thead>
+
+    <tbody>
+      @foreach (var item in Model.ListofBooks)
+      {
+          <tr>
+            <td>@item.Title</td>
+            <td>@item.Author</td>
+            <td>@item.ISBN</td>
+          </tr> 
+      }
+        
+
+       
+        
+    </tbody>
+
 </table>
+
 
 <div class="text-center">
     <h5>Hello!</h5>
