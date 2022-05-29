@@ -35,16 +35,16 @@ namespace kriostat.pl.Pages
         [BindProperty]
         public IndexModelViewModel IndexModelViewModel { get; set; }
 
-        
+
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
 
-           
 
-            
-             //ListofVehicles = new List<Vehicle>();
+
+
+            //ListofVehicles = new List<Vehicle>();
             //ListofVehicles.Add(new Military() {Name = "Fiat", Number = "1", Mass = 500});
             //ListofVehicles.Add(new Truck() { Name = "Skoda", Number = "3" , Mass = 700});
             //ListofVehicles.Add(new Truck() { Name = "Porsche", Number = "100", Mass = 1000 });
@@ -75,16 +75,16 @@ namespace kriostat.pl.Pages
 
                 var file = System.IO.File.ReadAllBytes(path);
 
-                memoryStream.Write(file, 0, file.Length);   
+                memoryStream.Write(file, 0, file.Length);
 
                 memoryStream.Position = 0;
 
                 var FileContent = writer.Deserialize(memoryStream);
 
-                return (List<Book>) FileContent;
+                return (List<Book>)FileContent;
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             { }
             return new List<Book>();
         }
@@ -109,25 +109,45 @@ namespace kriostat.pl.Pages
 
         }
 
-        
-        public IActionResult OnGet(Guid? deleteRow)
+        public string EditBook(Book book)
+        {
+
+            return book.Author;
+        }
+
+
+        public IActionResult OnGet(Guid? deleteRow, Guid? editRow)
         {
             IndexModelViewModel = new IndexModelViewModel();
             IndexModelViewModel.ListofBooks = LoadFromRepository();
             if (deleteRow.HasValue)
             {
-                IndexModelViewModel.ListofBooks.RemoveAll(p=>p.Id == deleteRow.Value);
+                IndexModelViewModel.ListofBooks.RemoveAll(p => p.Id == deleteRow.Value);
                 SaveToRepository();
+            }
+
+            if (editRow.HasValue)
+            {
+                Book BookToEdit = new Book();
+                BookToEdit = IndexModelViewModel.ListofBooks.Find(p => p.Id==editRow.Value);
+                Console.WriteLine(EditBook(BookToEdit));
             }
             return Page();
         }
+
+
 
         public IActionResult OnPost()
         {
 
             IndexModelViewModel.ListofBooks = LoadFromRepository();
-            Book book = new Book() { Title = IndexModelViewModel.BookTitle , Author = IndexModelViewModel.BookAuthor, ISBN = IndexModelViewModel.BookISBN,
-                Id = Guid.NewGuid() };
+            Book book = new Book()
+            {
+                Title = IndexModelViewModel.BookTitle,
+                Author = IndexModelViewModel.BookAuthor,
+                ISBN = IndexModelViewModel.BookISBN,
+                Id = Guid.NewGuid()
+            };
 
             this.IndexModelViewModel.ListofBooks.Add(book);
             SaveToRepository();
