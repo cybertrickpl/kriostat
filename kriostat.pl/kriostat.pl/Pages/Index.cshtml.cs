@@ -97,7 +97,7 @@ namespace kriostat.pl.Pages
             System.Xml.Serialization.XmlSerializer writer =
                    new System.Xml.Serialization.XmlSerializer(typeof(List<Book>));
 
-            string? path = System.IO.Path.Combine("c:\\Test", "Repository.txt");
+            string? path = System.IO.Path.Combine("c:\\Test", "Repository.xml");
 
             System.IO.FileStream file = System.IO.File.Create(path);
 

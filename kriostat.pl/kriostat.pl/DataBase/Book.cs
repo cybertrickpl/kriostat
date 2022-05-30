@@ -13,6 +13,9 @@
 
         public Book()
         {
+            Title = "Gone with the wind";
+            Author = "Smith";
+            ISBN = "123456";
         }
 
     }
