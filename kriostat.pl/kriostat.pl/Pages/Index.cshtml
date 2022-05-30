@@ -77,8 +77,8 @@
 </table>
 
 
-@if (Model.IndexModelViewModel.IndexToEdit == -10)
-{
+
+
     <form  method="post">
         <br /> 
         <label>Title</label>
@@ -92,17 +92,23 @@
         <label>ISBN</label>
         <input type="text" asp-for="IndexModelViewModel.BookISBN" />
 
-
-
-        <button type="submit">Add New Book</button>
-
+    @{
+        int i = Model.IndexToEdit;
+    }
+    @if(Model.IndexToEdit == -1)
+        {
+        <button name = "button", value = "@(i)",  action ="Add", type="submit">Add New Book</button>
+        }
+        else{
+        <button name = "button", value = "@(i)", action ="Edit",  type="submit">Edit Book</button>
+        }
 
     </form>
-}
 
-@if(Model.IndexModelViewModel.IndexToEdit != -10 )
+
+@*@if(Model.IndexToEdit != -1 )
 {
-<form  method="post">
+<form method="post">
     <br /> 
     <label>Title</label>
     <input type="text" asp-for="IndexModelViewModel.BookTitleEdit" />
@@ -122,7 +128,7 @@
 </form>
 
 }
-
+*@
 <div class="text-center">
     <h5>Hello!</h5>
     <h2>My kriostat</h2>
