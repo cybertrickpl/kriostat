@@ -18,8 +18,20 @@ namespace kriostat.pl.Pages
         [BindProperty]
         public string BookISBN { get; set; }
 
+        [BindProperty]
+        public string BookTitleEdit { get; set; }
+
+        [BindProperty]
+        public string BookAuthorEdit { get; set; }
+
+        [BindProperty]
+        public string BookISBNEdit { get; set; }
 
         public List<Book> ListofBooks { get; set; }
+
+        public int IndexToEdit { get; set; } = -10;
+        
+                
     }
 
 
@@ -31,6 +43,8 @@ namespace kriostat.pl.Pages
 
         public List<Vehicle> ListofVehicles { get; set; }
 
+        
+
 
         [BindProperty]
         public IndexModelViewModel IndexModelViewModel { get; set; }
@@ -40,8 +54,7 @@ namespace kriostat.pl.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-
-
+            
 
 
             //ListofVehicles = new List<Vehicle>();
@@ -69,7 +82,7 @@ namespace kriostat.pl.Pages
                 System.Xml.Serialization.XmlSerializer writer =
                    new System.Xml.Serialization.XmlSerializer(typeof(List<Book>));
 
-                string? path = System.IO.Path.Combine("c:\\Test", "Repository.txt");
+                string? path = System.IO.Path.Combine("c:\\Test", "Repository.xml");
 
                 MemoryStream memoryStream = new MemoryStream();
 
@@ -109,29 +122,26 @@ namespace kriostat.pl.Pages
 
         }
 
-        public string EditBook(Book book)
-        {
-
-            return book.Author;
-        }
-
 
         public IActionResult OnGet(Guid? deleteRow, Guid? editRow)
         {
             IndexModelViewModel = new IndexModelViewModel();
             IndexModelViewModel.ListofBooks = LoadFromRepository();
+            
+
             if (deleteRow.HasValue)
             {
                 IndexModelViewModel.ListofBooks.RemoveAll(p => p.Id == deleteRow.Value);
-                SaveToRepository();
+                SaveToRepository();                
             }
 
             if (editRow.HasValue)
             {
-                Book BookToEdit = new Book();
-                BookToEdit = IndexModelViewModel.ListofBooks.Find(p => p.Id==editRow.Value);
-                Console.WriteLine(EditBook(BookToEdit));
+
+                int index = IndexModelViewModel.ListofBooks.FindIndex(p => p.Id == editRow.Value);
+                IndexModelViewModel.IndexToEdit = index;
             }
+
             return Page();
         }
 
@@ -139,19 +149,38 @@ namespace kriostat.pl.Pages
 
         public IActionResult OnPost()
         {
+                if (IndexModelViewModel.IndexToEdit == -10)
+                { 
+                    IndexModelViewModel.ListofBooks = LoadFromRepository();
+                    Book book = new Book()
+                    {
+                        Title = IndexModelViewModel.BookTitle,
+                        Author = IndexModelViewModel.BookAuthor,
+                        ISBN = IndexModelViewModel.BookISBN,
+                        Id = Guid.NewGuid()
+                    };
 
-            IndexModelViewModel.ListofBooks = LoadFromRepository();
-            Book book = new Book()
+                    this.IndexModelViewModel.ListofBooks.Add(book);
+                }
+
+            if (IndexModelViewModel.IndexToEdit != -10)
             {
-                Title = IndexModelViewModel.BookTitle,
-                Author = IndexModelViewModel.BookAuthor,
-                ISBN = IndexModelViewModel.BookISBN,
-                Id = Guid.NewGuid()
-            };
+                IndexModelViewModel.ListofBooks = LoadFromRepository();
+                Book EditedBook = new Book()
+                {
+                    Title = IndexModelViewModel.BookTitleEdit,
+                    Author = IndexModelViewModel.BookAuthorEdit,
+                    ISBN = IndexModelViewModel.BookISBNEdit,
+                    Id = Guid.NewGuid()
+                };
 
-            this.IndexModelViewModel.ListofBooks.Add(book);
+                this.IndexModelViewModel.ListofBooks.Add(EditedBook);
+
+            }
+
             SaveToRepository();
             return Page();
+        
         }
 
     }

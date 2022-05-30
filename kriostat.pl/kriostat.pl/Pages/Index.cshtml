@@ -39,9 +39,12 @@
 
 
 
-<table>+
+<table class="table  table-striped">
     <thead>
         <tr>
+            
+            <td></td>
+            <td>Id</td>
             <td>Title</td>
             <td>Author</td>
             <td>ISBN</td>
@@ -49,13 +52,21 @@
     </thead>
 
     <tbody>
+        @{int lp=0;}
       @foreach (var item in Model.IndexModelViewModel.ListofBooks)
       {
           <tr>
+              
+            <td><a href="/index?editRow=@item.Id">[Edytuj]</a>
+<a href="/index?deleteRow=@item.Id">[Usun]</a>                
+            </td>
+            
+            <td>@item.Id</td>
             <td>@item.Title</td>
             <td>@item.Author</td>
             <td>@item.ISBN</td>
           </tr> 
+          lp++;
       }
         
 
@@ -65,6 +76,52 @@
 
 </table>
 
+
+@if (Model.IndexModelViewModel.IndexToEdit == -10)
+{
+    <form  method="post">
+        <br /> 
+        <label>Title</label>
+        <input type="text" asp-for="IndexModelViewModel.BookTitle" />
+
+        <br /> 
+        <label>Author</label>
+        <input type="text" asp-for="IndexModelViewModel.BookAuthor" />
+
+        <br /> 
+        <label>ISBN</label>
+        <input type="text" asp-for="IndexModelViewModel.BookISBN" />
+
+
+
+        <button type="submit">Add New Book</button>
+
+
+    </form>
+}
+
+@if(Model.IndexModelViewModel.IndexToEdit != -10 )
+{
+<form  method="post">
+    <br /> 
+    <label>Title</label>
+    <input type="text" asp-for="IndexModelViewModel.BookTitleEdit" />
+    
+    <br /> 
+    <label>Author</label>
+    <input type="text" asp-for="IndexModelViewModel.BookAuthorEdit" />
+    
+    <br /> 
+    <label>ISBN</label>
+    <input type="text" asp-for="IndexModelViewModel.BookISBNEdit" />
+      
+   
+
+    <button type="submit">Edit Book</button>
+ 
+</form>
+
+}
 
 <div class="text-center">
     <h5>Hello!</h5>
