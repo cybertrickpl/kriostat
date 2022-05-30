@@ -29,9 +29,9 @@ namespace kriostat.pl.Pages
 
         public List<Book> ListofBooks { get; set; }
 
-        public int IndexToEdit { get; set; } = -10;
-        
-                
+    
+
+
     }
 
 
@@ -43,7 +43,7 @@ namespace kriostat.pl.Pages
 
         public List<Vehicle> ListofVehicles { get; set; }
 
-        
+        public int IndexToEdit { get; set; } = -1;
 
 
         [BindProperty]
@@ -123,6 +123,8 @@ namespace kriostat.pl.Pages
         }
 
 
+        
+
         public IActionResult OnGet(Guid? deleteRow, Guid? editRow)
         {
             IndexModelViewModel = new IndexModelViewModel();
@@ -139,7 +141,7 @@ namespace kriostat.pl.Pages
             {
 
                 int index = IndexModelViewModel.ListofBooks.FindIndex(p => p.Id == editRow.Value);
-                IndexModelViewModel.IndexToEdit = index;
+                this.IndexToEdit = index;
             }
 
             return Page();
@@ -147,38 +149,74 @@ namespace kriostat.pl.Pages
 
 
 
-        public IActionResult OnPost()
+        public IActionResult Add()
         {
-                if (IndexModelViewModel.IndexToEdit == -10)
-                { 
+            IndexModelViewModel.ListofBooks = LoadFromRepository();
+            Book book = new Book()
+            {
+                Title = IndexModelViewModel.BookTitle,
+                Author = IndexModelViewModel.BookAuthor,
+                ISBN = IndexModelViewModel.BookISBN,
+                Id = Guid.NewGuid()
+            };
+
+            this.IndexModelViewModel.ListofBooks.Add(book);
+            SaveToRepository();
+            return Page();
+
+        }
+
+        public IActionResult Edit()
+        {
+            IndexModelViewModel.ListofBooks = LoadFromRepository();
+            Book book = new Book()
+            {
+                Title = "Edited",
+                Author = "Edited",
+                ISBN = "Edited",
+                Id = Guid.NewGuid()
+            };
+
+            this.IndexModelViewModel.ListofBooks.Add(book);
+            SaveToRepository();
+            return Page();
+        }
+
+
+        public IActionResult OnPost(string button)
+        {
+            switch(button)
+            {
+                case "Add":
+            IndexModelViewModel.ListofBooks = LoadFromRepository();
+            Book book = new Book()
+            {
+                Title = IndexModelViewModel.BookTitle,
+                Author = IndexModelViewModel.BookAuthor,
+                ISBN = IndexModelViewModel.BookISBN,
+                Id = Guid.NewGuid()
+            };
+
+            this.IndexModelViewModel.ListofBooks.Add(book);
+            SaveToRepository();
+                    break;
+            
+
+            case "Edit":
                     IndexModelViewModel.ListofBooks = LoadFromRepository();
-                    Book book = new Book()
+                    Book book1 = new Book()
                     {
-                        Title = IndexModelViewModel.BookTitle,
-                        Author = IndexModelViewModel.BookAuthor,
-                        ISBN = IndexModelViewModel.BookISBN,
+                        Title = "Edited",
+                        Author = "Edited",
+                        ISBN = "Edited",
                         Id = Guid.NewGuid()
                     };
 
-                    this.IndexModelViewModel.ListofBooks.Add(book);
-                }
-
-            if (IndexModelViewModel.IndexToEdit != -10)
-            {
-                IndexModelViewModel.ListofBooks = LoadFromRepository();
-                Book EditedBook = new Book()
-                {
-                    Title = IndexModelViewModel.BookTitleEdit,
-                    Author = IndexModelViewModel.BookAuthorEdit,
-                    ISBN = IndexModelViewModel.BookISBNEdit,
-                    Id = Guid.NewGuid()
-                };
-
-                this.IndexModelViewModel.ListofBooks.Add(EditedBook);
-
+                    this.IndexModelViewModel.ListofBooks.Add(book1);
+                    SaveToRepository();
+                    break;
             }
 
-            SaveToRepository();
             return Page();
         
         }
