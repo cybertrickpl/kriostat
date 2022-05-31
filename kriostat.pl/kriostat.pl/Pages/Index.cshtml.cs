@@ -160,13 +160,14 @@ namespace kriostat.pl.Pages
                         string Author = IndexModelViewModel.BookAuthor;
                         string ISBN = IndexModelViewModel.BookISBN;
 
-                        Book bookToEdit = this.IndexModelViewModel.ListofBooks.ElementAt(index);
+                        Book EditedBook = this.IndexModelViewModel.ListofBooks.ElementAt(index);
 
-                        bookToEdit.Title = Title;
-                        bookToEdit.Author = Author;
-                        bookToEdit.ISBN = ISBN;
+                        EditedBook.Title = Title;
+                        EditedBook.Author = Author;
+                        EditedBook.ISBN = ISBN;                        
 
-                        this.IndexModelViewModel.ListofBooks.Insert(index, bookToEdit);
+                        this.IndexModelViewModel.ListofBooks[index] = EditedBook;
+                        
                         SaveToRepository();
             return 0;
         }
