@@ -172,6 +172,11 @@ namespace kriostat.pl.Pages
             return 0;
         }
 
+        public void ClickAdd(object sender, EventArgs e)
+        {
+            
+        }
+
 
         public IActionResult OnPost(string button)
         {
