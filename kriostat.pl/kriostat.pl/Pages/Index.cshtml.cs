@@ -26,7 +26,8 @@ namespace kriostat.pl.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-
+        
+        private readonly IBookRepository _bookRepository;
         public int Count { get; set; }
 
         public List<Vehicle> ListofVehicles { get; set; }
@@ -42,6 +43,7 @@ namespace kriostat.pl.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+            _bookRepository = new BookRepositoryFS();
 
 
 
@@ -116,20 +118,21 @@ namespace kriostat.pl.Pages
         public IActionResult OnGet(Guid? deleteRow, Guid? editRow)
         {
             IndexModelViewModel = new IndexModelViewModel();
-            IndexModelViewModel.ListofBooks = LoadFromRepository();
+            IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
 
 
             if (deleteRow.HasValue)
             {
-                IndexModelViewModel.ListofBooks.RemoveAll(p => p.Id == deleteRow.Value);
-                SaveToRepository();
+                _bookRepository.Delete(deleteRow.Value);
+                IndexModelViewModel.ListofBooks= _bookRepository.LoadFromRepository();
             }
 
             if (editRow.HasValue)
             {
 
-                int index = IndexModelViewModel.ListofBooks.FindIndex(p => p.Id == editRow.Value);
-                this.IndexToEdit = index;
+                var index = IndexModelViewModel.ListofBooks.FirstOrDefault(p => p.Id == editRow.Value);
+                IndexModelViewModel.BookAuthor = index.Author;
+               
             }
 
             return Page();
@@ -139,17 +142,10 @@ namespace kriostat.pl.Pages
 
         public int Add()
         {
-            IndexModelViewModel.ListofBooks = LoadFromRepository();
-            Book book = new Book()
-                  {
-                        Title = IndexModelViewModel.BookTitle,
-                        Author = IndexModelViewModel.BookAuthor,
-                        ISBN = IndexModelViewModel.BookISBN,
-                        Id = Guid.NewGuid()
-                    };
+            _bookRepository.Add(IndexModelViewModel.BookTitle, IndexModelViewModel.BookAuthor, IndexModelViewModel.BookISBN);
+            IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
 
-                        this.IndexModelViewModel.ListofBooks.Add(book);
-                        SaveToRepository();
+
             return 0;
         }
 
@@ -178,7 +174,7 @@ namespace kriostat.pl.Pages
         }
 
 
-        public IActionResult OnPost(string button)
+        public IActionResult OnPost(string button, Guid? deleteRow, Guid? editRow)
         {
             
             int index = Int32.Parse(button);

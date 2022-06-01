@@ -97,10 +97,10 @@
     }
     @if(Model.IndexToEdit == -1)
         {
-        <button name = "button", value = "@(i)",  action ="Add", OnClick ="ClickAdd" , type="submit">Add New Book</button>
+        <button name = "button" value = "@(i)"  action ="Add" OnClick ="ClickAdd"  type="submit">Add New Book</button>
         }
         else{
-        <button name = "button", value = "@(i)", action ="Edit", OnClick ="ClickEdit", type="submit">Edit Book</button>
+        <button name = "button" value = "@(i)" action ="Edit" OnClick ="ClickEdit" type="submit">Edit Book</button>
         }
 
     </form>
