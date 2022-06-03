@@ -20,6 +20,8 @@ namespace kriostat.pl.Pages
                 
         public List<Book> ListofBooks { get; set; }
 
+        public Guid? IdToEdit { get; set; } = null;
+
     }
 
 
@@ -31,9 +33,7 @@ namespace kriostat.pl.Pages
         public int Count { get; set; }
 
         public List<Vehicle> ListofVehicles { get; set; }
-
-        public Guid? IdToEdit { get; set; } = null;
-
+          
 
         [BindProperty]
         public IndexModelViewModel IndexModelViewModel { get; set; }
@@ -78,9 +78,7 @@ namespace kriostat.pl.Pages
         }
 
         public void Edit(Guid editRow)
-        {
-             IdToEdit = null;
-
+        {            
              IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
              _bookRepository.Edit(editRow, IndexModelViewModel.BookTitle, IndexModelViewModel.BookAuthor, IndexModelViewModel.BookISBN);
              IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
@@ -96,7 +94,7 @@ namespace kriostat.pl.Pages
             if (deleteRow.HasValue)
             {
                 _bookRepository.Delete(deleteRow.Value);
-                IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
+                IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();               
             }
 
             if (editRow.HasValue)
@@ -106,18 +104,28 @@ namespace kriostat.pl.Pages
                 IndexModelViewModel.BookTitle = ItemToEdit.Title;
                 IndexModelViewModel.BookAuthor = ItemToEdit.Author;
                 IndexModelViewModel.BookISBN = ItemToEdit.ISBN;
-                
-                IdToEdit = ItemToEdit.Id;
-                                                           
+
+                IndexModelViewModel.IdToEdit = editRow.Value;
+
             }
+                       
 
             return Page();
         }
 
-        public IActionResult OnPost(Guid? editRow)
-        {                        
-            if (editRow.HasValue) Edit(editRow.Value);
-            else Add();
+        public IActionResult OnPost()
+        {
+            if (IndexModelViewModel.IdToEdit.HasValue)
+            {
+                Edit(IndexModelViewModel.IdToEdit.Value);
+                IndexModelViewModel.IdToEdit = null;
+
+
+            }
+            else
+            {                       
+                Add();                
+            } 
 
             return Page();
         }

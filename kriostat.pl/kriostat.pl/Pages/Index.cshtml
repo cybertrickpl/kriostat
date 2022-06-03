@@ -94,16 +94,14 @@
         <label>ISBN</label>
         <input type="text" asp-for="IndexModelViewModel.BookISBN" />
 
-    @{
-        Guid? i = Model.IdToEdit;
-    }
-
-    @if (i.HasValue)
+    
+  
+    @if (Model.IndexModelViewModel.IdToEdit.HasValue)
         {
         <button name = "button"   action ="Edit"  type="submit">Edit Book</button>
-        Model.IdToEdit = null;
-       
-    }
+        
+        }
+   
     else{
         <button name = "button"  action ="Add" type="submit">Add Book</button>
         }
