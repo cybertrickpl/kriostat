@@ -32,7 +32,7 @@ namespace kriostat.pl.Pages
 
         public List<Vehicle> ListofVehicles { get; set; }
 
-        public int IndexToEdit { get; set; } = -1;
+        public Guid? IdToEdit { get; set; } = null;
 
 
         [BindProperty]
@@ -65,170 +65,63 @@ namespace kriostat.pl.Pages
 
         //}
 
-        public List<Book> LoadFromRepository()
+             
+
+
+
+        public void Add()
         {
-            try
-            {
-                System.Xml.Serialization.XmlSerializer writer =
-                   new System.Xml.Serialization.XmlSerializer(typeof(List<Book>));
-
-                string? path = System.IO.Path.Combine("c:\\Test", "Repository.xml");
-
-                MemoryStream memoryStream = new MemoryStream();
-
-                var file = System.IO.File.ReadAllBytes(path);
-
-                memoryStream.Write(file, 0, file.Length);
-
-                memoryStream.Position = 0;
-
-                var FileContent = writer.Deserialize(memoryStream);
-
-                return (List<Book>)FileContent;
-
-            }
-            catch (Exception ex)
-            { }
-            return new List<Book>();
-        }
-        public int SaveToRepository()
-        {
-            //List<Book> books = LoadFromRepository();
-            //books.Add(book);
-
-
-            System.Xml.Serialization.XmlSerializer writer =
-                   new System.Xml.Serialization.XmlSerializer(typeof(List<Book>));
-
-            string? path = System.IO.Path.Combine("c:\\Test", "Repository.xml");
-
-            System.IO.FileStream file = System.IO.File.Create(path);
-
-            writer.Serialize(file, this.IndexModelViewModel.ListofBooks);
-
-            file.Close();
-
-            return 0;
+            IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
+            _bookRepository.Add(IndexModelViewModel.BookTitle, IndexModelViewModel.BookAuthor, IndexModelViewModel.BookISBN);
+            IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
 
         }
 
+        public void Edit(Guid editRow)
+        {
+             IdToEdit = null;
 
+             IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
+             _bookRepository.Edit(editRow, IndexModelViewModel.BookTitle, IndexModelViewModel.BookAuthor, IndexModelViewModel.BookISBN);
+             IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
 
+        }
 
         public IActionResult OnGet(Guid? deleteRow, Guid? editRow)
         {
             IndexModelViewModel = new IndexModelViewModel();
             IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
-
+           
 
             if (deleteRow.HasValue)
             {
                 _bookRepository.Delete(deleteRow.Value);
-                IndexModelViewModel.ListofBooks= _bookRepository.LoadFromRepository();
+                IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
             }
 
             if (editRow.HasValue)
             {
-
-                var index = IndexModelViewModel.ListofBooks.FirstOrDefault(p => p.Id == editRow.Value);
-                IndexModelViewModel.BookAuthor = index.Author;
                
+                var ItemToEdit = IndexModelViewModel.ListofBooks.FirstOrDefault(p => p.Id == editRow.Value);
+                IndexModelViewModel.BookTitle = ItemToEdit.Title;
+                IndexModelViewModel.BookAuthor = ItemToEdit.Author;
+                IndexModelViewModel.BookISBN = ItemToEdit.ISBN;
+                
+                IdToEdit = ItemToEdit.Id;
+                                                           
             }
 
             return Page();
         }
 
-
-
-        public int Add()
-        {
-            _bookRepository.Add(IndexModelViewModel.BookTitle, IndexModelViewModel.BookAuthor, IndexModelViewModel.BookISBN);
-            IndexModelViewModel.ListofBooks = _bookRepository.LoadFromRepository();
-
-
-            return 0;
-        }
-
-        public int Edit(int index)
-        {
-                        IndexModelViewModel.ListofBooks = LoadFromRepository();
-                        string Title = IndexModelViewModel.BookTitle;
-                        string Author = IndexModelViewModel.BookAuthor;
-                        string ISBN = IndexModelViewModel.BookISBN;
-
-                        Book EditedBook = this.IndexModelViewModel.ListofBooks.ElementAt(index);
-
-                        EditedBook.Title = Title;
-                        EditedBook.Author = Author;
-                        EditedBook.ISBN = ISBN;                        
-
-                        this.IndexModelViewModel.ListofBooks[index] = EditedBook;
-                        
-                        SaveToRepository();
-            return 0;
-        }
-
-        public void ClickAdd(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        public IActionResult OnPost(string button, Guid? deleteRow, Guid? editRow)
-        {
-            
-            int index = Int32.Parse(button);
-
-            if (index < 0) Add();
-
-            else Edit(index);
+        public IActionResult OnPost(Guid? editRow)
+        {                        
+            if (editRow.HasValue) Edit(editRow.Value);
+            else Add();
 
             return Page();
         }
 
-        //public IActionResult OnPost(string button)
-        //{
-        //    IndexModelViewModel.ListofBooks = LoadFromRepository();
-
-        //    switch (button)
-        //    {
-        //        case "Add":
-
-        //            Book book = new Book()
-        //            {
-        //                Title = IndexModelViewModel.BookTitle,
-        //                Author = IndexModelViewModel.BookAuthor,
-        //                ISBN = IndexModelViewModel.BookISBN,
-        //                Id = Guid.NewGuid()
-        //            };
-
-        //            this.IndexModelViewModel.ListofBooks.Add(book);
-        //            SaveToRepository();
-        //            break;
-
-
-        //        case "Edit":
-
-        //            int index = 0;
-
-        //            string Title = IndexModelViewModel.BookTitle;
-        //            string Author = IndexModelViewModel.BookAuthor;
-        //            string ISBN = IndexModelViewModel.BookISBN;
-
-        //            Book bookToEdit = this.IndexModelViewModel.ListofBooks.ElementAt(index);
-
-        //            bookToEdit.Title = Title;
-        //            bookToEdit.Author = Author;
-        //            bookToEdit.ISBN = ISBN;
-
-        //            this.IndexModelViewModel.ListofBooks.Insert(index, bookToEdit);
-        //            SaveToRepository();
-        //            break;
-        //    }
-
-        //    return Page();
-
-        //}
-
+       
     }
 }

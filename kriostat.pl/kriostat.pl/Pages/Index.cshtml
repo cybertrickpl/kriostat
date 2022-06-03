@@ -39,6 +39,8 @@
 
 
 
+
+
 <table class="table  table-striped">
     <thead>
         <tr>
@@ -52,7 +54,7 @@
     </thead>
 
     <tbody>
-        @{int lp=0;}
+        
       @foreach (var item in Model.IndexModelViewModel.ListofBooks)
       {
           <tr>
@@ -66,7 +68,7 @@
             <td>@item.Author</td>
             <td>@item.ISBN</td>
           </tr> 
-          lp++;
+         
       }
         
 
@@ -93,42 +95,23 @@
         <input type="text" asp-for="IndexModelViewModel.BookISBN" />
 
     @{
-        int i = Model.IndexToEdit;
+        Guid? i = Model.IdToEdit;
     }
-    @if(Model.IndexToEdit == -1)
+
+    @if (i.HasValue)
         {
-        <button name = "button" value = "@(i)"  action ="Add" OnClick ="ClickAdd"  type="submit">Add New Book</button>
-        }
-        else{
-        <button name = "button" value = "@(i)" action ="Edit" OnClick ="ClickEdit" type="submit">Edit Book</button>
+        <button name = "button"   action ="Edit"  type="submit">Edit Book</button>
+        Model.IdToEdit = null;
+       
+    }
+    else{
+        <button name = "button"  action ="Add" type="submit">Add Book</button>
         }
 
     </form>
 
 
-@*@if(Model.IndexToEdit != -1 )
-{
-<form method="post">
-    <br /> 
-    <label>Title</label>
-    <input type="text" asp-for="IndexModelViewModel.BookTitleEdit" />
-    
-    <br /> 
-    <label>Author</label>
-    <input type="text" asp-for="IndexModelViewModel.BookAuthorEdit" />
-    
-    <br /> 
-    <label>ISBN</label>
-    <input type="text" asp-for="IndexModelViewModel.BookISBNEdit" />
-      
-   
 
-    <button type="submit">Edit Book</button>
- 
-</form>
-
-}
-*@
 <div class="text-center">
     <h5>Hello!</h5>
     <h2>My kriostat</h2>

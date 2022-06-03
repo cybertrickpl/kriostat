@@ -8,13 +8,28 @@
             var tmplist = LoadFromRepository();
             Book book = new Book()
             {
+                Id = Guid.NewGuid(),
                 Title = title,
                 Author = author,
                 ISBN = ISBN,
-                Id = Guid.NewGuid()
+                
             };
 
             tmplist.Add(book);
+            SaveToRepository(tmplist);
+
+        }
+
+        public void Edit(Guid id, string title, string author, string ISBN)
+        {
+
+            var tmplist = LoadFromRepository();
+
+            tmplist.FirstOrDefault(p => p.Id == id).Title = title;
+            tmplist.FirstOrDefault(p => p.Id == id).Author = author;
+            tmplist.FirstOrDefault(p => p.Id == id).ISBN = ISBN;
+            tmplist.FirstOrDefault(p => p.Id == id).Id = id;
+
             SaveToRepository(tmplist);
 
         }
@@ -71,9 +86,8 @@
             writer.Serialize(file, list);
 
             file.Close();
-
             return 0;
-
+            
         }
 
         public void Update(Guid Id, string title, string author, string ISBN)
