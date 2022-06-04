@@ -20,6 +20,7 @@ namespace kriostat.pl.Pages
                 
         public List<Book> ListofBooks { get; set; }
 
+        [BindProperty]
         public Guid? IdToEdit { get; set; } = null;
 
     }
@@ -113,15 +114,16 @@ namespace kriostat.pl.Pages
             return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(Guid? editRow)
         {
-            if (IndexModelViewModel.IdToEdit.HasValue)
-            {
-                Edit(IndexModelViewModel.IdToEdit.Value);
-                IndexModelViewModel.IdToEdit = null;
 
+            if (editRow.HasValue)
+            {
+                Edit(editRow.Value);
+                 return Redirect("/");
 
             }
+
             else
             {                       
                 Add();                

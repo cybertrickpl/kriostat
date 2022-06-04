@@ -24,11 +24,11 @@
         {
 
             var tmplist = LoadFromRepository();
-
-            tmplist.FirstOrDefault(p => p.Id == id).Title = title;
-            tmplist.FirstOrDefault(p => p.Id == id).Author = author;
-            tmplist.FirstOrDefault(p => p.Id == id).ISBN = ISBN;
-            tmplist.FirstOrDefault(p => p.Id == id).Id = id;
+            var editRow = tmplist.Single(p => p.Id == id);
+            editRow.Title = title;
+            editRow.Author = author;
+            editRow.ISBN = ISBN;
+       
 
             SaveToRepository(tmplist);
 
