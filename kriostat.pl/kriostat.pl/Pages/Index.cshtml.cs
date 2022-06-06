@@ -1,9 +1,10 @@
-﻿using kriostat.pl.DataBase;
-using kriostat.pl.Warehouse;
+﻿using kriostat.pl.Warehouse;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Xml.Serialization;
 using System.Linq;
+using Kriostat.Lib.Common.Entities;
+using Kriostat.Lib.Common.Interfaces;
 
 namespace kriostat.pl.Pages
 {

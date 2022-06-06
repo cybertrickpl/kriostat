@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\BooksRepository\Kriostat.Lib.BooksRepository.FS\Kriostat.Lib.BooksRepository.FS.csproj" />
+    <ProjectReference Include="..\Lib\Kriostat.Lib.Common\Kriostat.Lib.Common.csproj" />
+  </ItemGroup>
+
 </Project>

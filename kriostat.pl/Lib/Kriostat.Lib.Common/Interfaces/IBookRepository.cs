@@ -1,4 +1,6 @@
-﻿namespace kriostat.pl.DataBase
+﻿using Kriostat.Lib.Common.Entities;
+
+namespace Kriostat.Lib.Common.Interfaces
 {
     public interface IBookRepository
     {

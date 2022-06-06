@@ -1,4 +1,4 @@
-﻿namespace kriostat.pl.DataBase
+﻿namespace Kriostat.Lib.Common.Entities
 {
     [Serializable]
 
