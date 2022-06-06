@@ -7,6 +7,7 @@ using Kriostat.Lib.Common.Entities;
 using Kriostat.Lib.Common.Interfaces;
 using Kriostat.Lib.BooksRepository.FS;
 using Kriostat.Lib.BooksRepository.Fake;
+using Kriostat.Lib.BookRepositories.RepositoryDB;
 
 namespace kriostat.pl.Pages
 {
@@ -44,10 +45,10 @@ namespace kriostat.pl.Pages
 
 
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, MyContext context)
         {
             _logger = logger;
-            _bookRepository = new BookRepositoryFake2();
+            _bookRepository = new BookRepositoryDB(context);
 
 
 

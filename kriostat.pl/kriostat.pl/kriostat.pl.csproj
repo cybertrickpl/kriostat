@@ -8,10 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Lib\BooksRepository\BookRepositoryFake\BookRepositoryFake.csproj" />
+    <ProjectReference Include="..\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\Kriostat.Lib.BookRepositories.RepositoryDB.csproj" />
     <ProjectReference Include="..\Lib\BooksRepository\Kriostat.Lib.BooksRepository.FS\Kriostat.Lib.BooksRepository.FS.csproj" />
     <ProjectReference Include="..\Lib\Kriostat.Lib.Common\Kriostat.Lib.Common.csproj" />
   </ItemGroup>

@@ -18,5 +18,9 @@ namespace Kriostat.Lib.BookRepositories.RepositoryDB.Entities
         public string Author { get; set; }
 
         public string ISBN { get; set; }
+
+        public DateTime? DeleteStamp { get; set; }
+
+        public DateTime? ModifStamp { get; set; }
     }
 }

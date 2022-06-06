@@ -1,0 +1,15 @@
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\bin\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.deps.json
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\bin\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\bin\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.pdb
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\bin\Debug\net6.0\Kriostat.Lib.Common.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\bin\Debug\net6.0\Kriostat.Lib.Common.pdb
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.csproj.AssemblyReference.cache
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.AssemblyInfoInputs.cache
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.AssemblyInfo.cs
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.csproj.CoreCompileInputs.cache
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.csproj.CopyComplete
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\refint\Kriostat.Lib.BookRepositories.RepositoryDB.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\Kriostat.Lib.BookRepositories.RepositoryDB.pdb
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\obj\Debug\net6.0\ref\Kriostat.Lib.BookRepositories.RepositoryDB.dll
