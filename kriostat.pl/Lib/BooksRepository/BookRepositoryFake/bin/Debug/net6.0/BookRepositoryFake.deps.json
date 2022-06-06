@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BookRepositoryFake/1.0.0": {
+        "dependencies": {
+          "Kriostat.Lib.Common": "1.0.0"
+        },
+        "runtime": {
+          "BookRepositoryFake.dll": {}
+        }
+      },
+      "Kriostat.Lib.Common/1.0.0": {
+        "runtime": {
+          "Kriostat.Lib.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BookRepositoryFake/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Kriostat.Lib.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

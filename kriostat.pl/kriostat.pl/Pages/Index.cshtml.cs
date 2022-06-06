@@ -5,6 +5,8 @@ using System.Xml.Serialization;
 using System.Linq;
 using Kriostat.Lib.Common.Entities;
 using Kriostat.Lib.Common.Interfaces;
+using Kriostat.Lib.BooksRepository.FS;
+using Kriostat.Lib.BooksRepository.Fake;
 
 namespace kriostat.pl.Pages
 {
@@ -45,7 +47,7 @@ namespace kriostat.pl.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            _bookRepository = new BookRepositoryFS();
+            _bookRepository = new BookRepositoryFake2();
 
 
 

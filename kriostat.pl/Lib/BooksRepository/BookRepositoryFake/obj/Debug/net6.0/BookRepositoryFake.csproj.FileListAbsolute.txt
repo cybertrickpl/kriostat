@@ -1,0 +1,15 @@
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\bin\Debug\net6.0\BookRepositoryFake.deps.json
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\bin\Debug\net6.0\BookRepositoryFake.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\bin\Debug\net6.0\BookRepositoryFake.pdb
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\bin\Debug\net6.0\Kriostat.Lib.Common.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\bin\Debug\net6.0\Kriostat.Lib.Common.pdb
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.csproj.AssemblyReference.cache
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.GeneratedMSBuildEditorConfig.editorconfig
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.AssemblyInfoInputs.cache
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.AssemblyInfo.cs
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.csproj.CoreCompileInputs.cache
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.csproj.CopyComplete
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\refint\BookRepositoryFake.dll
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\BookRepositoryFake.pdb
+C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\obj\Debug\net6.0\ref\BookRepositoryFake.dll
