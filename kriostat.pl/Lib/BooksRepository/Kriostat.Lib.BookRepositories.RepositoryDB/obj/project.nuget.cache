@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i4ZHkWfG3RzXv2LqzUDaepainLnslRYQxWaV7qWYNG3UxrKEqgnuLl8xomfKgh9DIOwCgZayklRZ52FjDRICUw==",
+  "dgSpecHash": "Q7xGgG2YRJVbRnw2ejQuzY0ADTwqFG2Gu8QFpYbZDZOwi3p9buaUBgN5jJci/HxxhLV/4xrjgbvvFO7iMFfaHg==",
   "success": true,
-  "projectFilePath": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj",
+  "projectFilePath": "C:\\Users\\708\\source\\repos\\kriostat\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\708\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.5\\microsoft.entityframeworkcore.6.0.5.nupkg.sha512",
     "C:\\Users\\708\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.5\\microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512",

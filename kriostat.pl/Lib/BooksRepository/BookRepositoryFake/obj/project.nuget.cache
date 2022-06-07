@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0+1qcijM3J8yynR9L//EvCFXfxhsLegdcq+0x2iI08bYG6s1HsKQ7YQeakFrYgmvExcCiS3zg6MDTods6Itfhw==",
+  "dgSpecHash": "aXIHXfdVK65VL4Hptt1IAG66duRFFdSjsEFJWZeiCzgCELxGMxRoKgDfnf/BUIxKsnuYrccLkfOw5bOlqEao9g==",
   "success": true,
-  "projectFilePath": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\BooksRepository\\BookRepositoryFake\\BookRepositoryFake.csproj",
+  "projectFilePath": "C:\\Users\\708\\source\\repos\\kriostat\\kriostat.pl\\Lib\\BooksRepository\\BookRepositoryFake\\BookRepositoryFake.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

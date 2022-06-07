@@ -48,7 +48,8 @@ namespace kriostat.pl.Pages
         public IndexModel(ILogger<IndexModel> logger, MyContext context)
         {
             _logger = logger;
-            _bookRepository = new BookRepositoryDB(context);
+            //_bookRepository = new BookRepositoryDB(context);
+            _bookRepository = new BookRepositoryFake2();
 
 
 
