@@ -1,0 +1,132 @@
+﻿@page
+@model BookModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<body>
+
+<p>
+    This is my first paragraph.
+</p>
+
+@*<table>
+    <thead> 
+        <tr> <td>Number</td>
+            <td>Name</td>
+            <td>Mass</td>
+            <td>Info</td>
+            <td>Category</td>
+       </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListofVehicles)
+        {
+            <tr> 
+                <td>@item.Number</td>
+                <td>@item.Name</td>
+                <td>@item.Mass</td>
+                <td>@item.Info()</td>
+                <td>@item.VehicleType</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr> <td>Number</td>
+            <td>Name</td>
+            <td>@Model.ListofVehicles.Sum(x => x.Mass)</td>
+            <td>Info</td>
+            <td>Category</td>
+       </tr>
+    </tfoot>
+</table>*@
+
+
+
+
+
+
+<table class="table  table-striped">
+    <thead>
+        <tr>
+            
+            <td></td>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>ISBN</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+      @foreach (var item in Model.IndexModelViewModel.ListofBooks)
+      {
+          <tr>
+              
+            <td><a href="/index?editRow=@item.Id">[Edytuj]</a>
+<a href="/index?deleteRow=@item.Id">[Usun]</a>                
+            </td>
+            
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@item.Author</td>
+            <td>@item.ISBN</td>
+          </tr> 
+         
+      }
+        
+
+       
+        
+    </tbody>
+
+</table>
+
+
+
+
+    <form  method="post">
+        <br /> 
+        <label>Title</label>
+        <input type="text" asp-for="IndexModelViewModel.BookTitle" />
+
+        <br /> 
+        <label>Author</label>
+        <input type="text" asp-for="IndexModelViewModel.BookAuthor" />
+
+        <br /> 
+        <label>ISBN</label>
+        <input type="text" asp-for="IndexModelViewModel.BookISBN" />
+
+    
+  
+    @if (Model.IndexModelViewModel.IdToEdit.HasValue)
+        {
+        
+        <button name = "button"  action ="Edit"  type="submit">Edit Book</button>
+        
+        }
+   
+    else{
+        <button name = "button"  action ="Add" type="submit">Add Book</button>
+        }
+
+    </form>
+
+
+
+<div class="text-center">
+    <h5>Hello!</h5>
+    <h2>My kriostat</h2>
+    <h1 class="display-4">Welcome</h1>
+    <h5>Ala ma kota</h5>
+    <h1>Bye bye!</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div style="width: 50px; height:100px; background-color:red"></div>
+    <div style="width: 100px; height:200px; background-color:blueviolet"></div>
+</div>
+
+<h1> @Model?.Count</h1>
+
+</body>
