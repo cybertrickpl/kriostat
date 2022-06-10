@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WSL_site</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WSL_site.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+
+
+<body>
+    <!-- Header -->
+				<div id="header">
+
+					@*<!-- Logo -->
+						<h1><a href="index.html" id="logo">Welcome to my web page!</em></a></h1>*@
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/Classes">Classes</a></li>
+								<li><a href="/Research">Research</a></li>
+								<li><a href="/Contact">Contact</a></li>
+								
+							</ul>
+						</nav>
+
+				</div>
+
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+				<div id="footer">
+					<p> &copy; Lothar, 2022 </p>						
+				</div>
+
+    <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

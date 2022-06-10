@@ -5,17 +5,40 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kriostat.pl", "kriostat.pl\kriostat.pl.csproj", "{4B4711B5-E7DB-4844-A21A-E478B747DF7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kriostat.Lib.Common", "Lib\Kriostat.Lib.Common\Kriostat.Lib.Common.csproj", "{26145907-04DE-491E-ABE3-AB1D8BA1A6AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kriostat.Lib.Common", "Lib\Kriostat.Lib.Common\Kriostat.Lib.Common.csproj", "{26145907-04DE-491E-ABE3-AB1D8BA1A6AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{779698E4-EE59-4D50-93A0-5D30EBCB5942}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BooksRepository", "BooksRepository", "{CE4B63DB-053E-445B-90B2-81AEEFDB8D16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kriostat.Lib.BooksRepository.FS", "Lib\BooksRepository\Kriostat.Lib.BooksRepository.FS\Kriostat.Lib.BooksRepository.FS.csproj", "{6DD23C59-2B5A-4B55-8140-9434AD726AEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kriostat.Lib.BooksRepository.FS", "Lib\BooksRepository\Kriostat.Lib.BooksRepository.FS\Kriostat.Lib.BooksRepository.FS.csproj", "{6DD23C59-2B5A-4B55-8140-9434AD726AEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRepositoryFake", "Lib\BooksRepository\BookRepositoryFake\BookRepositoryFake.csproj", "{8475019D-AA51-4AE5-AE8D-0FB386607C32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookRepositoryFake", "Lib\BooksRepository\BookRepositoryFake\BookRepositoryFake.csproj", "{8475019D-AA51-4AE5-AE8D-0FB386607C32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kriostat.Lib.BookRepositories.RepositoryDB", "Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\Kriostat.Lib.BookRepositories.RepositoryDB.csproj", "{B7E31728-E0DF-4F88-A6F0-431CECE290EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kriostat.Lib.BookRepositories.RepositoryDB", "Lib\BooksRepository\Kriostat.Lib.BookRepositories.RepositoryDB\Kriostat.Lib.BookRepositories.RepositoryDB.csproj", "{B7E31728-E0DF-4F88-A6F0-431CECE290EF}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "html5up-arcana", "html5up-arcana\", "{30ED89B3-2E72-454E-8AB7-B4C09B0FC1BC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51932"
+		Debug.AspNetCompiler.PhysicalPath = "html5up-arcana\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51932\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51932"
+		Release.AspNetCompiler.PhysicalPath = "html5up-arcana\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51932\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51932"
+		SlnRelativePath = "html5up-arcana\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSL_site", "WSL_site\WSL_site.csproj", "{D2B90AE5-F535-4C0D-AE12-899CC2B67ACA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +66,14 @@ Global
 		{B7E31728-E0DF-4F88-A6F0-431CECE290EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7E31728-E0DF-4F88-A6F0-431CECE290EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7E31728-E0DF-4F88-A6F0-431CECE290EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30ED89B3-2E72-454E-8AB7-B4C09B0FC1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30ED89B3-2E72-454E-8AB7-B4C09B0FC1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30ED89B3-2E72-454E-8AB7-B4C09B0FC1BC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{30ED89B3-2E72-454E-8AB7-B4C09B0FC1BC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D2B90AE5-F535-4C0D-AE12-899CC2B67ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B90AE5-F535-4C0D-AE12-899CC2B67ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B90AE5-F535-4C0D-AE12-899CC2B67ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B90AE5-F535-4C0D-AE12-899CC2B67ACA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
