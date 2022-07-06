@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Wsl.Common\Wsl.Common.csproj" />
+  </ItemGroup>
+
 </Project>

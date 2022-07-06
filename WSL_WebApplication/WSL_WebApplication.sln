@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.1.32421.90
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSL_WebApplication", "WSL_WebApplication\WSL_WebApplication.csproj", "{354C0FA0-0FDC-49B5-BFA0-D58385759E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSL.DataBase", "WSL.DataBase\WSL.DataBase.csproj", "{C7D07E92-4CA7-40FE-A051-8E5EBD186905}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSL.DataBase", "WSL.DataBase\WSL.DataBase.csproj", "{C7D07E92-4CA7-40FE-A051-8E5EBD186905}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wsl.WebService", "Wsl.WebService\Wsl.WebService.csproj", "{C9C4BE9E-8A5D-4DDE-AE00-8C27545CF93D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wsl.Common", "Wsl.Common\Wsl.Common.csproj", "{C5ACED8A-4813-4479-B584-35F185B186B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wsl.Services", "Wsl.Services\Wsl.Services.csproj", "{6976D4C6-E7CC-4013-8E96-1E3654354A36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{C7D07E92-4CA7-40FE-A051-8E5EBD186905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7D07E92-4CA7-40FE-A051-8E5EBD186905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7D07E92-4CA7-40FE-A051-8E5EBD186905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C4BE9E-8A5D-4DDE-AE00-8C27545CF93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C4BE9E-8A5D-4DDE-AE00-8C27545CF93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C4BE9E-8A5D-4DDE-AE00-8C27545CF93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C4BE9E-8A5D-4DDE-AE00-8C27545CF93D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5ACED8A-4813-4479-B584-35F185B186B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5ACED8A-4813-4479-B584-35F185B186B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5ACED8A-4813-4479-B584-35F185B186B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5ACED8A-4813-4479-B584-35F185B186B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6976D4C6-E7CC-4013-8E96-1E3654354A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6976D4C6-E7CC-4013-8E96-1E3654354A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6976D4C6-E7CC-4013-8E96-1E3654354A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6976D4C6-E7CC-4013-8E96-1E3654354A36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

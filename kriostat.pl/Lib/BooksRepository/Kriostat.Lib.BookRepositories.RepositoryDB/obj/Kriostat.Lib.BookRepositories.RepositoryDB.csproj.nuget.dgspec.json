@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj": {}
+    "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj": {}
   },
   "projects": {
-    "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj": {
+    "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj",
+        "projectUniqueName": "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj",
         "projectName": "Kriostat.Lib.BookRepositories.RepositoryDB",
-        "projectPath": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj",
-        "packagesPath": "C:\\Users\\708\\.nuget\\packages\\",
-        "outputPath": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\obj\\",
+        "projectPath": "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\Kriostat.Lib.BookRepositories.RepositoryDB.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\BooksRepository\\Kriostat.Lib.BookRepositories.RepositoryDB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\708\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,8 +35,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj": {
-                "projectPath": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj"
+              "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj": {
+                "projectPath": "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj"
               }
             }
           }
@@ -68,26 +71,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj": {
+    "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj",
+        "projectUniqueName": "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj",
         "projectName": "Kriostat.Lib.Common",
-        "projectPath": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj",
-        "packagesPath": "C:\\Users\\708\\.nuget\\packages\\",
-        "outputPath": "C:\\programming\\kriostat2\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\obj\\",
+        "projectPath": "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\Kriostat.Lib.Common.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Praca\\Private\\Wiola\\kriostat\\kriostat\\kriostat.pl\\Lib\\Kriostat.Lib.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\708\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -126,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
