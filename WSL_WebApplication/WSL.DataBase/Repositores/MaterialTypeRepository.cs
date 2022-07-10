@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wsl.Common.Dto;
+using WSL.DataBase.Tables;
 
 namespace WSL.DataBase.Repositores
 {
@@ -25,5 +26,19 @@ namespace WSL.DataBase.Repositores
 
             return sql.Select(p => new MaterialTypeDto() { Id = p.Id, Description = p.Description, Name = p.Name }).ToList();
         }
+
+        public int Add(MaterialTypeDto ItemToAdd)
+        {
+
+            MaterialType materialType = new MaterialType() { Name = ItemToAdd.Name, Description = ItemToAdd.Description };
+            _context.MaterialTypes.Add(materialType);
+            _context.SaveChanges();
+
+
+            
+
+            return materialType.Id;
+        }
+
     }
 }

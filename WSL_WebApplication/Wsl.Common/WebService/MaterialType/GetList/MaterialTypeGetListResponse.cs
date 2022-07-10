@@ -7,7 +7,7 @@ using Wsl.Common.Dto;
 
 namespace Wsl.Common.WebService.MaterialType.GetList
 {
-    public class MaterialTypeGetListResponse
+    public class MaterialTypeListResponse
     {
         public List<MaterialTypeDto> MaterialTypes { get; set; }
     }

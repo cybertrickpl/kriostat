@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wsl.Common.WebService.MaterialType.Add;
 using Wsl.Common.WebService.MaterialType.GetList;
 using WSL.DataBase.Repositores;
 
@@ -16,12 +17,21 @@ namespace Wsl.Services.Services
             _materialTypeRepository = materialTypeRepository;
         }
 
-        public MaterialTypeGetListResponse GetList(MaterialTypeGetListRequest request)
+        public MaterialTypeListResponse GetList(MaterialTypeListRequest request)
         {
-            MaterialTypeGetListResponse response = new MaterialTypeGetListResponse();
+            MaterialTypeListResponse response = new MaterialTypeListResponse();
             response.MaterialTypes = _materialTypeRepository.GetList(request.FilterByName);
 
             return response;
         }
+
+        public MaterialTypeAddResponseAdd Add(MaterialTypeAddRequestAdd request)
+        {
+            MaterialTypeAddResponseAdd response = new MaterialTypeAddResponseAdd();
+            response.Id = _materialTypeRepository.Add(request.MaterialType);
+
+            return response;
+        }
+
     }
 }

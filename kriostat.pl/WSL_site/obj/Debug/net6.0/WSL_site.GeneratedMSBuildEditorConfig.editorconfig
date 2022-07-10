@@ -8,49 +8,49 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WSL_site
 build_property.RootNamespace = WSL_site
-build_property.ProjectDir = C:\Praca\Private\Wiola\kriostat\kriostat\kriostat.pl\WSL_site\
+build_property.ProjectDir = C:\programming\kriostat2\kriostat.pl\WSL_site\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Praca\Private\Wiola\kriostat\kriostat\kriostat.pl\WSL_site
+build_property.MSBuildProjectDirectory = C:\programming\kriostat2\kriostat.pl\WSL_site
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Classes.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Classes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Contact.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Error.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Index.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Privacy.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Research.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Research.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/_ViewImports.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/_ViewStart.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Praca/Private/Wiola/kriostat/kriostat/kriostat.pl/WSL_site/Pages/Shared/_Layout.cshtml]
+[C:/programming/kriostat2/kriostat.pl/WSL_site/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vfjo9v3yky

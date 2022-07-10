@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Wsl.Common.WebService.MaterialType.Add;
 using Wsl.Common.WebService.MaterialType.GetList;
 using Wsl.Services.Services;
 
@@ -25,9 +26,9 @@ namespace Wsl.WebService.Controllers
 
         [HttpPost("/MaterialType/GetList", Name = "MaterialTypeGetList")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public MaterialTypeGetListResponse MaterialTypeGetList([FromBody] MaterialTypeGetListRequest request)
+        public MaterialTypeListResponse MaterialTypeGetList([FromBody] MaterialTypeListRequest request)
         {
-            MaterialTypeGetListResponse response = new MaterialTypeGetListResponse();
+            MaterialTypeListResponse response = new MaterialTypeListResponse();
             try
             {
                 response = _materialTypeService.GetList(request);
@@ -39,5 +40,24 @@ namespace Wsl.WebService.Controllers
 
             return response;
         }
+
+
+        [HttpPost("/MaterialType/Add", Name = "MaterialTypeAdd")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public MaterialTypeAddResponseAdd MaterialTypeAdd([FromBody] MaterialTypeAddRequestAdd request)
+        {
+            MaterialTypeAddResponseAdd response = new MaterialTypeAddResponseAdd();
+            try
+            {
+                response = _materialTypeService.Add(request);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return response;
+        }
+
     }
 }

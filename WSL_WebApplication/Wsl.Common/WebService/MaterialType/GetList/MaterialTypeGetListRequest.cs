@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wsl.Common.WebService.MaterialType.GetList
 {
-    public class MaterialTypeGetListRequest
+    public class MaterialTypeListRequest
     {
         public string FilterByName { get; set; }
     }
