@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wsl.Common.WebService.MaterialType.Add;
+using Wsl.Common.WebService.MaterialType.Delete;
+using Wsl.Common.WebService.MaterialType.Edit;
 using Wsl.Common.WebService.MaterialType.GetList;
 using WSL.DataBase.Repositores;
 
@@ -33,5 +35,20 @@ namespace Wsl.Services.Services
             return response;
         }
 
+        public MaterialTypeDeleteResponse Delete(MaterialTypeDeleteRequest request)
+        {
+            MaterialTypeDeleteResponse response = new MaterialTypeDeleteResponse();
+            response.Id = _materialTypeRepository.Delete(request.FilterById);
+
+            return response;
+        }
+
+        public MaterialTypeEditResponse Edit(MaterialTypeEditRequest request)
+        {
+            MaterialTypeEditResponse response = new MaterialTypeEditResponse();
+            response.Id = _materialTypeRepository.Edit(request.FilterById, request.MaterialType);
+
+            return response;
+        }
     }
 }

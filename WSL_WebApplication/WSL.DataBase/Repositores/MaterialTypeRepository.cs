@@ -40,5 +40,30 @@ namespace WSL.DataBase.Repositores
             return materialType.Id;
         }
 
+        public int Delete(int Id)
+        {
+            MaterialType materialType = new MaterialType();
+            var sql = _context.MaterialTypes.AsQueryable();
+
+            materialType = sql.First(p => p.Id == Id);
+            _context.MaterialTypes.Remove(materialType);
+            _context.SaveChanges();
+
+            return Id;
+        }
+
+
+        public int Edit(int Id, MaterialType materialType)
+        {
+           
+            var sql = _context.MaterialTypes.AsQueryable();
+
+            sql.First(p => p.Id == Id).Name = materialType.Name;
+            sql.First(p => p.Id == Id).Description = materialType.Description;           
+            _context.SaveChanges();
+
+            return Id;
+        }
+
     }
 }

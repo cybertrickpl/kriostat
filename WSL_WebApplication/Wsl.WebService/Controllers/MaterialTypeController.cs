@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Wsl.Common.WebService.MaterialType.Add;
+using Wsl.Common.WebService.MaterialType.Delete;
 using Wsl.Common.WebService.MaterialType.GetList;
 using Wsl.Services.Services;
 
@@ -50,6 +51,23 @@ namespace Wsl.WebService.Controllers
             try
             {
                 response = _materialTypeService.Add(request);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return response;
+        }
+
+        [HttpPost("/MaterialType/Delete", Name = "MaterialTypeDelete")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public MaterialTypeDeleteResponse MaterialTypeDelete([FromBody] MaterialTypeDeleteRequest request)
+        {
+            MaterialTypeDeleteResponse response = new MaterialTypeDeleteResponse();
+            try
+            {
+                response = _materialTypeService.Delete(request);
             }
             catch (Exception ex)
             {
