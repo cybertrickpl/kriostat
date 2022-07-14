@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Wsl.Common.WebService.MaterialType.Add;
 using Wsl.Common.WebService.MaterialType.Delete;
+using Wsl.Common.WebService.MaterialType.Edit;
 using Wsl.Common.WebService.MaterialType.GetList;
 using Wsl.Services.Services;
 
@@ -76,6 +77,24 @@ namespace Wsl.WebService.Controllers
 
             return response;
         }
+
+        [HttpPost("/MaterialType/Edit", Name = "MaterialTypeEdit")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public MaterialTypeEditResponse MaterialTypeEdit([FromBody] MaterialTypeEditRequest request)
+        {
+            MaterialTypeEditResponse response = new MaterialTypeEditResponse();
+            try
+            {
+                response = _materialTypeService.Edit(request);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return response;
+        }
+
 
     }
 }

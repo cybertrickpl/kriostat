@@ -46,7 +46,7 @@ namespace Wsl.Services.Services
         public MaterialTypeEditResponse Edit(MaterialTypeEditRequest request)
         {
             MaterialTypeEditResponse response = new MaterialTypeEditResponse();
-            response.Id = _materialTypeRepository.Edit(request.FilterById, request.MaterialType);
+            response.Id = _materialTypeRepository.Edit(request.FilterById, request.ItemToEdit);
 
             return response;
         }

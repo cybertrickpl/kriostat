@@ -42,10 +42,8 @@ namespace WSL.DataBase.Repositores
 
         public int Delete(int Id)
         {
-            MaterialType materialType = new MaterialType();
-            var sql = _context.MaterialTypes.AsQueryable();
-
-            materialType = sql.First(p => p.Id == Id);
+            var materialType = _context.MaterialTypes.FirstOrDefault(p => p.Id == Id);
+                        
             _context.MaterialTypes.Remove(materialType);
             _context.SaveChanges();
 
@@ -53,13 +51,13 @@ namespace WSL.DataBase.Repositores
         }
 
 
-        public int Edit(int Id, MaterialType materialType)
+        public int Edit(int Id, MaterialTypeDto EditParams)
         {
-           
-            var sql = _context.MaterialTypes.AsQueryable();
+            
+            var materialType = _context.MaterialTypes.FirstOrDefault(p => p.Id == Id);
 
-            sql.First(p => p.Id == Id).Name = materialType.Name;
-            sql.First(p => p.Id == Id).Description = materialType.Description;           
+            materialType.Name = EditParams.Name;
+            materialType.Description = EditParams.Description;           
             _context.SaveChanges();
 
             return Id;
