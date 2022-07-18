@@ -22,5 +22,19 @@
 
             return response;
         }
+
+        public async Task<MaterialTypeDeleteResponse> MaterialTypeDeleteAsync(int id)
+        {
+            var response = await webService.MaterialTypeDeleteAsync(new MaterialTypeDeleteRequest() { FilterById = id });
+
+            return response;
+        }
+
+        public async Task<MaterialTypeAddResponseAdd> MaterialTypeAddAsync(MaterialTypeDto itemToAdd)
+        {
+            var response = await webService.MaterialTypeAddAsync(new MaterialTypeAddRequestAdd() { MaterialType = itemToAdd });
+
+            return response;
+        }
     }
 }
