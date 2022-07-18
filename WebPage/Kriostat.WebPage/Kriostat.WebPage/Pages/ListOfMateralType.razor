@@ -1,0 +1,67 @@
+﻿@page "/listOfMaterialType"
+@using Kriostat.WebPage.Popups
+@inject WebServiceClientAccess WebServiceClientAccess
+@inject DialogService DialogService
+
+<PageTitle>List of material type</PageTitle>
+@if(MaterialTypes != null)
+{
+    
+            <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" FilterMode="FilterMode.Simple" PageSize="100" AllowPaging="true" AllowSorting="true"
+                        Data="@MaterialTypes" TItem="MaterialTypeDto" LogicalFilterOperator="LogicalFilterOperator.And">
+                <Columns>
+                    <RadzenDataGridColumn TItem="MaterialTypeDto" Property="Id" Title="Id" Width="90px" Filterable="false" />
+                   
+                    <RadzenDataGridColumn TItem="MaterialTypeDto" Title="Name" Width="90px" TextAlign="TextAlign.Right">
+                        <Template Context="data">
+                             <RadzenButton Click="(e => Edit(data))">Edit</RadzenButton>
+                        </Template>
+                    </RadzenDataGridColumn>
+                     <RadzenDataGridColumn TItem="MaterialTypeDto" Title="Name" TextAlign="TextAlign.Right">
+                        <Template Context="data">
+                            <span>@data.Name</span>
+                        </Template>
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="MaterialTypeDto" Title="Description" TextAlign="TextAlign.Right">
+                        <Template Context="data">
+                            <span>@data.Description</span>
+                        </Template>
+                    </RadzenDataGridColumn>
+
+                </Columns>
+            </RadzenDataGrid>
+}
+
+
+@code {
+    List<MaterialTypeDto> MaterialTypes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        LoadList();
+    }
+
+    private async Task LoadList()
+    {
+        try
+        {
+            var responce = await WebServiceClientAccess.MaterialTypeGetListAsync("");
+            MaterialTypes = responce.MaterialTypes.ToList();
+            StateHasChanged();
+        }catch(Exception ex)
+        {
+            ex.ToString();
+        }
+    }
+
+    private async void Edit(MaterialTypeDto materialTypeDto)
+    {
+        var newUser = await DialogService.OpenAsync<EditMaterialType>($"Edycja",
+               new Dictionary<string, object>() {
+                   { "MaterialTypeDto", materialTypeDto }  },
+               new DialogOptions() { Width = "800px", Height = "85%", Resizable = true, Draggable = false });
+        
+        await LoadList();
+        StateHasChanged();
+    }
+}
