@@ -1,0 +1,101 @@
+﻿@page "/popup/editMaterialType"
+@inject WebServiceClientAccess WebServiceClientAccess
+@inject Radzen.DialogService dialogService
+
+<div class="panel panel-inverse">
+    <div class="panel-body">
+        <RadzenFieldset Text="Dane finansowe">
+            <div class="row">
+                <div class="col-md-8 align-items-center d-flex">
+                    <RadzenLabel Text="Id" />
+                </div>
+                <div class="col-md-4">
+                    <RadzenLabel TValue="int" style="width: 100%; text-align: right;" @bind-Value="MaterialTypeDto.Id" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 align-items-center d-flex">
+                    <RadzenLabel Text="Name" />
+                </div>
+                <div class="col-md-4">
+                    <RadzenTextBox Change=@(args => ChangeCost(args))  style="width: 100%; text-align: right;" @bind-Value="MaterialTypeDto.Name" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 align-items-center d-flex">
+                    <RadzenLabel Text="Description" />
+                </div>
+                <div class="col-md-4">
+                    <RadzenTextBox Change=@(args => ChangeCost(args))  style="width: 100%; text-align: right;" @bind-Value="MaterialTypeDto.Description" />
+                </div>
+            </div>
+
+        </RadzenFieldset>
+
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div style="border-color: red; border-radius: 5px;    border-style: solid;    margin: 10px;    padding: 10px;">
+                @errorMessage
+            </div>
+        }
+
+        <RadzenButton Click="@((args) => Save())" Text="Zapisz" Style="width: 120px" />
+    </div>
+</div>
+
+@code {
+
+        [Parameter]
+    public MaterialTypeDto MaterialTypeDto { get; set; }
+
+        string errorMessage { get; set; }
+
+     private async Task ChangeCost(object o)
+    {
+        Validate();
+        StateHasChanged();
+    }
+
+    private void Validate()
+    {
+        errorMessage = "";
+        if (string.IsNullOrEmpty( MaterialTypeDto.Description))
+        {
+            errorMessage = "Uzupełnij opis";
+        }
+        if (string.IsNullOrEmpty( MaterialTypeDto.Name))
+        {
+            errorMessage = "Uzupełnij nazwę";
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+    }
+
+
+    private async void Save()
+    {
+        try
+        {
+            errorMessage = "";
+
+            var response = await WebServiceClientAccess.MaterialTypeEditAsync(MaterialTypeDto.Id,MaterialTypeDto);
+            if (response == null)
+            {
+                StateHasChanged();
+
+                return;
+            }
+
+            dialogService.Close(errorMessage);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+            StateHasChanged();
+        }
+    }
+
+}

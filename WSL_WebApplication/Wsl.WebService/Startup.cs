@@ -31,7 +31,17 @@ namespace Wsl.WebService
         {
            services.AddDbContext<WSLDBContext>(o => o.UseMySQL("server=mariadb12.iq.pl; port=3306; database=cybertrick_m2; user= 	cybertrick_m2; password=BrqBb9OqbMZcv909H2DI; Persist Security Info=False; Connect Timeout=300;Convert Zero Datetime=true;Character Set=utf8"));
 
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                  builder =>
+                  {
+                      builder
+                      .AllowAnyHeader()
+                      .AllowAnyMethod()
+                      .AllowAnyOrigin();
+                  });
+            });
             services.AddScoped<MaterialTypeService>();
             services.AddScoped<MaterialTypeRepository>();
             services.AddControllers();
@@ -51,6 +61,7 @@ namespace Wsl.WebService
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Wsl.WebService v1"));
             }
 
+            app.UseCors("CorsPolicy");
             app.UseRouting();
 
             app.UseAuthorization();

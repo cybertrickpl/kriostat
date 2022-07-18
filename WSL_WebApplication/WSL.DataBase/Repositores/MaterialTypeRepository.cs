@@ -29,13 +29,9 @@ namespace WSL.DataBase.Repositores
 
         public int Add(MaterialTypeDto ItemToAdd)
         {
-
             MaterialType materialType = new MaterialType() { Name = ItemToAdd.Name, Description = ItemToAdd.Description };
             _context.MaterialTypes.Add(materialType);
             _context.SaveChanges();
-
-
-            
 
             return materialType.Id;
         }
