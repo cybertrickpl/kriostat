@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookRepositoryFake
-build_property.ProjectDir = C:\programming\kriostat2\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\
+build_property.ProjectDir = C:\Praca\Private\Wiola\kriostat\kriostat\kriostat.pl\Lib\BooksRepository\BookRepositoryFake\
