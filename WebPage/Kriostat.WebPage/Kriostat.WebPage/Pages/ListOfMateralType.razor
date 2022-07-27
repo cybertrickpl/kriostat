@@ -6,7 +6,7 @@
 <PageTitle>List of material type</PageTitle>
 @if(MaterialTypes != null)
 {
-    
+     <RadzenButton Click="(e => Add())">Dodaj</RadzenButton>
             <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" FilterMode="FilterMode.Simple" PageSize="100" AllowPaging="true" AllowSorting="true"
                         Data="@MaterialTypes" TItem="MaterialTypeDto" LogicalFilterOperator="LogicalFilterOperator.And">
                 <Columns>
@@ -16,7 +16,23 @@
                         <Template Context="data">
                              <RadzenButton Click="(e => Edit(data))">Edit</RadzenButton>
                         </Template>
+
+                       
+
                     </RadzenDataGridColumn>
+
+
+                     <RadzenDataGridColumn TItem="MaterialTypeDto" Title="Name" Width="90px" TextAlign="TextAlign.Right">
+                       
+
+                        <Template Context="data">
+                             <RadzenButton Click="(e => Delete(data.Id))">Delete</RadzenButton>
+                        </Template>
+
+                    </RadzenDataGridColumn>
+
+
+
                      <RadzenDataGridColumn TItem="MaterialTypeDto" Title="Name" TextAlign="TextAlign.Right">
                         <Template Context="data">
                             <span>@data.Name</span>
@@ -27,8 +43,12 @@
                             <span>@data.Description</span>
                         </Template>
                     </RadzenDataGridColumn>
+                    
 
                 </Columns>
+
+                
+
             </RadzenDataGrid>
 }
 
@@ -60,8 +80,31 @@
                new Dictionary<string, object>() {
                    { "MaterialTypeDto", materialTypeDto }  },
                new DialogOptions() { Width = "800px", Height = "85%", Resizable = true, Draggable = false });
+
+        await LoadList();
+        StateHasChanged();
+    }
+
+    private async void Delete(int id)
+    {
+        //var responce = await WebServiceClientAccess.MaterialTypeDeleteAsync(id);
+
+        var newUser = await DialogService.OpenAsync<DeleteMaterialType>($"Usun",
+               new Dictionary<string, object>() { {"Id", id } },
+               new DialogOptions() { Width = "800px", Height = "85%", Resizable = true, Draggable = false });
+
+        await LoadList();
+        StateHasChanged();
+    }
+
+    private async void Add()
+    {
+        var newUser = await DialogService.OpenAsync<AddMaterialType>($"Dodaj",
+               new Dictionary<string, object>() { },
+               new DialogOptions() { Width = "800px", Height = "85%", Resizable = true, Draggable = false });
         
         await LoadList();
         StateHasChanged();
     }
+
 }
