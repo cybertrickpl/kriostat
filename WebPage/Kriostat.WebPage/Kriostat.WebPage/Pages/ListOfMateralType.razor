@@ -80,15 +80,19 @@
                new Dictionary<string, object>() {
                    { "MaterialTypeDto", materialTypeDto }  },
                new DialogOptions() { Width = "800px", Height = "85%", Resizable = true, Draggable = false });
-        
+
         await LoadList();
         StateHasChanged();
     }
 
-   private async void Delete(int id)
+    private async void Delete(int id)
     {
-        var responce = await WebServiceClientAccess.MaterialTypeDeleteAsync(id);
-        
+        //var responce = await WebServiceClientAccess.MaterialTypeDeleteAsync(id);
+
+        var newUser = await DialogService.OpenAsync<DeleteMaterialType>($"Usun",
+               new Dictionary<string, object>() { {"Id", id } },
+               new DialogOptions() { Width = "800px", Height = "85%", Resizable = true, Draggable = false });
+
         await LoadList();
         StateHasChanged();
     }

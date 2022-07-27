@@ -1,0 +1,82 @@
+﻿@page "/popup/deleteMaterialType"
+@inject WebServiceClientAccess WebServiceClientAccess
+@inject Radzen.DialogService dialogService
+
+<div class="panel panel-inverse">
+    <div class="panel-body">
+        <RadzenFieldset Text="Dane finansowe">
+            
+
+        </RadzenFieldset>
+
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div style="border-color: red; border-radius: 5px;    border-style: solid;    margin: 10px;    padding: 10px;">
+                @errorMessage
+            </div>
+        }
+
+        <RadzenButton Click="@((args) => Save())" Text="Delete" Style="width: 120px" />
+        <RadzenButton Click="@((args) => Cancel())" Text="Anuluj" Style="width: 120px" />
+
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public int id { get; set; }
+
+    string errorMessage { get; set; }
+
+    private async Task ChangeCost(object o)
+    {
+        Validate();
+        StateHasChanged();
+    }
+
+    private void Validate()
+    {
+        errorMessage = "";
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+    }
+
+
+    private async void Save()
+    {
+        try
+        {
+            errorMessage = "";
+
+            var response = await WebServiceClientAccess.MaterialTypeDeleteAsync(id);
+            if (response == null)
+            {
+                StateHasChanged();
+
+                return;
+            }
+
+            dialogService.Close(errorMessage);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+            StateHasChanged();
+        }
+    }
+
+    private async void Cancel()
+    {
+         errorMessage = "";
+        dialogService.Close(errorMessage);
+    }
+
+
+    
+
+}
