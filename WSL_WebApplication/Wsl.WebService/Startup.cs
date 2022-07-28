@@ -43,6 +43,11 @@ namespace Wsl.WebService
                   });
             });
             services.AddScoped<MaterialTypeService>();
+            services.AddScoped<MeasurementService>();
+
+
+
+            services.AddScoped<MeasurementRepository>();
             services.AddScoped<MaterialTypeRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>

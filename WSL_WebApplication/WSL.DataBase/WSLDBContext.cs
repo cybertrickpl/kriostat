@@ -16,5 +16,6 @@ namespace WSL.DataBase
         }
 
         public virtual DbSet<MaterialType> MaterialTypes { get; set; }
+        public virtual DbSet<Measurement> Measurements { get; set; }
     }
 }
